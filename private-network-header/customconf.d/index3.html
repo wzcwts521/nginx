@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script>
+    var req = new XMLHttpRequest();
+
+    req.onreadystatechange = function() {
+        
+        if(req.readyState==4 && req.status==200) {
+            document.getElementById("demo").innerHTML=req.responseText;
+        }
+    }
+
+    {{/* var resource = location.hash.substring(1); */}}
+    var resource = "http://coolpamushroom.com:8081/200.gif"
+    req.open("GET",resource,true);
+    req.send();
+</script>
+<body>
+    <div id="demo"></div>
+</body>
+</html>
